@@ -23,14 +23,14 @@ a:hover {
 }
 
 .header {
-    background-color: #282a36;
+    background-color: #000;
  
 }
 .header h2 {
     padding: 0;
     margin: 0;
     line-height: 80px;
-    color: #f8f8f2;
+    color: #ffffff;
     font-weight: 700
 }
 .header a{
@@ -57,7 +57,7 @@ a:hover {
 }
 
 .header li:hover{
-    border-bottom: 1px solid #0000ff;
+    border-bottom: 1px solid #1A77FF;
 }
 
 .main {
@@ -71,12 +71,15 @@ a:hover {
 .main h1 {
     font-size: 53px;
     font-weight: 700;
+    color: #ffffff;
 }
 .main p {
    font-size: 14px; 
 }
 .main button {
     background-color: #d64f2d;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .tool-items {
@@ -86,7 +89,7 @@ a:hover {
 .tool-item-box {
     width: 200px;
     height: 310px;
-    background-color: #282a36;
+    background-color: #000000;
     text-align: center;
     padding: 20px 10px;
     float: left;
@@ -114,6 +117,7 @@ a:hover {
     margin-top: 30px;
     font-size: 32px;
     font-weight: 500;
+    color: #ffffff;
 }
 
 .tool-item-desc {
@@ -133,6 +137,7 @@ a:hover {
    font-weight: 300;
    font-size: 26px;
    margin: 0 0 50px 0;
+   color: #ffffff;
 }
 
 .supporting ul {
@@ -142,7 +147,7 @@ a:hover {
 }
 
 .supporting ul>li:hover {
-    border-bottom: 1px solid #0000ff;
+    border-bottom: 1px solid #1A77FF;
 }
 
 .supporting ul li>a{
@@ -153,10 +158,39 @@ a:hover {
 .supporting ul li>a:hover{
     color: #ffffff;
 }
+.support-item h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 200;
+}
 
 .footer {
-    background-color: #44475a;
+    background-color: #000;
     padding: 20px 0;
     font-size: 12px;
 }
 
+.contact-label {
+    color: #ffffff;
+}
+
+.contact-input {
+    background: transparent;
+    border-color: #1A77FF;
+}
+.contact-input:focus {
+    outline: none;
+}
+.contact-title {
+    color: #ffffff;
+    font-size: 32px;
+}
+.form-contact {
+    margin-top: 50px;
+}
+#btn-contact {
+    margin-top: 40px;
+}
+.req-field{
+     color: #ff0000;
+}
