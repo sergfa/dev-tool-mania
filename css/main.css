@@ -1,0 +1,162 @@
+body {
+    font-family: Lato, serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+a {
+    color: #ccc;
+}
+
+a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0px auto;
+    width: 1140;
+}
+.text-2{
+    color: #eeeeee;
+}
+
+.header {
+    background-color: #282a36;
+ 
+}
+.header h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 80px;
+    color: #f8f8f2;
+    font-weight: 700
+}
+.header a{
+    text-decoration: none;
+}
+.header ul {
+    margin-top: 50px;
+    list-style: none;
+}
+.header ul>li {
+    display: inline-block;
+    margin: 0 10px 0 0
+}
+.header ul a{
+    color: #f8f8f2;
+    font-size: 16px;
+    padding-bottom: 0px;
+    font-weight: 200;
+}
+
+.header ul a:hover{
+    background-color: transparent;
+    font-weight: 700;
+}
+
+.header li:hover{
+    border-bottom: 1px solid #0000ff;
+}
+
+.main {
+  /*  height: 650px;*/
+    background-color: #44475a;
+    padding: 50px 0;
+}
+.main .row {
+    margin-left: 0px;
+}
+.main h1 {
+    font-size: 53px;
+    font-weight: 700;
+}
+.main p {
+   font-size: 14px; 
+}
+.main button {
+    background-color: #d64f2d;
+}
+
+.tool-items {
+    margin-top: 50px;
+}
+
+.tool-item-box {
+    width: 200px;
+    height: 310px;
+    background-color: #282a36;
+    text-align: center;
+    padding: 20px 10px;
+    float: left;
+    margin: 20px 20px 0 0;
+}
+
+.tool-item-icon{
+    width: 64PX;
+    height: 64px;
+    margin-top: 30px; 
+}
+
+.tool-items a {
+    color: #f8f8f2;
+    text-decoration: none;
+}
+
+.tool-items a:hover {
+    color: #f8f8f2;
+    color: #ffffff;
+}
+
+
+.tool-item-title {
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.tool-item-desc {
+    margin-top: 70px;
+}
+
+.supporting {
+    background-color: #282a36;
+    padding: 50px 0;
+}
+
+.supporting .row {
+    margin-left: 0px;
+}
+.supporting .container>h2{
+   text-align: center;
+   font-weight: 300;
+   font-size: 26px;
+   margin: 0 0 50px 0;
+}
+
+.supporting ul {
+    margin : 0;
+    list-style: none;
+    padding: 0;
+}
+
+.supporting ul>li:hover {
+    border-bottom: 1px solid #0000ff;
+}
+
+.supporting ul li>a{
+    font-style: italic;
+    text-decoration: none;
+}
+
+.supporting ul li>a:hover{
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #44475a;
+    padding: 20px 0;
+    font-size: 12px;
+}
+
