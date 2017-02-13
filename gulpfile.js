@@ -44,7 +44,7 @@ gulp.task('templates', function() {
 
 
 gulp.task('copy-resources', function() {
-	return gulp.src(['img/**/*']).pipe(gulp.dest('dist/img'));
+	return gulp.src(['img/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
 });
 
 

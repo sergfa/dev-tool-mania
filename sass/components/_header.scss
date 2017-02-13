@@ -16,6 +16,9 @@
         &>li {
               display: inline-block;
               margin: 0 10px 0 0;
+              &:last-child{
+                margin-right: 0px;
+              }
               &:hover{
                     border-bottom: 1px solid $underline-color;
                 }
