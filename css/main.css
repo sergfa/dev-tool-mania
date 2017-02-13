@@ -51,7 +51,7 @@
   .supporting .container > h2 {
     text-align: center;
     font-weight: 300;
-    font-size: 26px;
+    font-size: 24px;
     margin: 0 0 50px 0;
     color: #ffffff; }
   .supporting ul {
@@ -67,7 +67,7 @@
       border-bottom: 1px solid #1A77FF; }
   .supporting .support-item h3 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200; }
 
 .footer {
@@ -85,7 +85,7 @@
   margin: 20px 20px 0 0; }
 
 .tool-item-icon {
-  width: 64PX;
+  width: 64px;
   height: 64px;
   margin-top: 30px; }
 

@@ -9,7 +9,7 @@
 }
 
 .tool-item-icon{
-    width: 64PX;
+    width: 64px;
     height: 64px;
     margin-top: 30px; 
 }
@@ -17,7 +17,7 @@
 
 .tool-item-title {
     margin-top: 30px;
-    font-size: 32px;
+    font-size: $super-big-font-size;
     font-weight: 500;
     color: $important-text-color;
 }

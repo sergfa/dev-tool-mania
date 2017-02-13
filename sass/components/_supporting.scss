@@ -9,7 +9,7 @@
         &>h2{
             text-align: center;
             font-weight: 300;
-            font-size: 26px;
+            font-size: $big-font-size;
             margin: 0 0 50px 0;
             color: $important-text-color;}
    }
@@ -34,7 +34,7 @@
     .support-item {
         h3 {
         color: $important-text-color;
-        font-size: 18px;
+        font-size: $medium-font-size;
         font-weight: 200;}
     }
 

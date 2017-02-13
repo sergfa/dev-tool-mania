@@ -21,7 +21,7 @@
                 }
               &>a {
                     color: $primary-text-color;
-                    font-size: 16px;
+                    font-size: $medium-font-size;
                     padding-bottom: 0px;
                     font-weight: 200;
                     &:hover {

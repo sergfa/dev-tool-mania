@@ -6,15 +6,15 @@
         margin-left: 0px;}
 
     h1 {
-        font-size: 53px;
+        font-size: $large-font-size;
         font-weight: 700;
         color: $important-text-color;}
 
     p {
-        font-size: 14px; }
+        font-size: $small-font-size; }
 
     button {
         background-color: $important-button-bkg;
         color: $important-text-color;
-        font-size: 16px;}
+        font-size: $medium-font-size;}
 }        
