@@ -1,9 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import 'helpers/variables';
 @import 'components/header';
+@import 'components/main';
+@import 'components/supporting';
 @import 'components/footer';
 @import 'components/tool_item';
-@import 'pages/_index';
+@import 'pages/index';
+@import 'pages/contact';
 
 
 body {
@@ -15,11 +18,9 @@ body {
 
 a {
     color: $default-a-text-color;
-}
-
-a:hover {
-    color: $default-a-text-color;
-    text-decoration: none;
+    &:hover {
+        color: $default-a-text-color;
+        text-decoration: none;}
 }
 
 .container {
@@ -28,27 +29,4 @@ a:hover {
 }
 
 
-.contact-label {
-    color: $important-text-color;
-}
 
-.contact-input {
-    background: transparent;
-    border-color: $underline-color;
-}
-.contact-input:focus {
-    outline: none;
-}
-.contact-title {
-    color: $important-text-color;
-    font-size: 32px;
-}
-.form-contact {
-    margin-top: 50px;
-}
-#btn-contact {
-    margin-top: 40px;
-}
-.req-field{
-     color: $attention-text-color;
-}

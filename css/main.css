@@ -12,19 +12,63 @@
   .header ul {
     margin-top: 45px;
     list-style: none; }
-    .header ul li {
+    .header ul > li {
       display: inline-block;
       margin: 0 10px 0 0; }
-      .header ul li:hover {
+      .header ul > li:hover {
         border-bottom: 1px solid #1A77FF; }
-      .header ul li a {
+      .header ul > li > a {
         color: #f8f8f2;
         font-size: 16px;
         padding-bottom: 0px;
         font-weight: 200; }
-        .header ul li a:hover {
+        .header ul > li > a:hover {
           background-color: transparent;
           font-weight: 700; }
+
+.main {
+  /*  height: 650px;*/
+  background-color: #44475a;
+  padding: 50px 0; }
+  .main .row {
+    margin-left: 0px; }
+  .main h1 {
+    font-size: 53px;
+    font-weight: 700;
+    color: #ffffff; }
+  .main p {
+    font-size: 14px; }
+  .main button {
+    background-color: #d64f2d;
+    color: #ffffff;
+    font-size: 16px; }
+
+.supporting {
+  background-color: #282a36;
+  padding: 50px 0; }
+  .supporting .row {
+    margin-left: 0px; }
+  .supporting .container > h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 26px;
+    margin: 0 0 50px 0;
+    color: #ffffff; }
+  .supporting ul {
+    margin: 0;
+    list-style: none;
+    padding: 0; }
+    .supporting ul li a {
+      font-style: italic;
+      text-decoration: none; }
+      .supporting ul li a:hover {
+        color: #ffffff; }
+    .supporting ul li:hover {
+      border-bottom: 1px solid #1A77FF; }
+  .supporting .support-item h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 200; }
 
 .footer {
   background-color: #000000;
@@ -54,74 +98,14 @@
 .tool-item-desc {
   margin-top: 70px; }
 
-#index-main {
-  /*  height: 650px;*/
-  background-color: #44475a;
-  padding: 50px 0; }
-  #index-main .row {
-    margin-left: 0px; }
-  #index-main h1 {
-    font-size: 53px;
-    font-weight: 700;
-    color: #ffffff; }
-  #index-main p {
-    font-size: 14px; }
-  #index-main button {
-    background-color: #d64f2d;
-    color: #ffffff;
-    font-size: 16px; }
-  #index-main .tool-items {
-    margin-top: 50px; }
-    #index-main .tool-items a {
+.main .tool-items {
+  margin-top: 50px; }
+  .main .tool-items a {
+    color: #f8f8f2;
+    text-decoration: none; }
+    .main .tool-items a:hover {
       color: #f8f8f2;
-      text-decoration: none; }
-      #index-main .tool-items a:hover {
-        color: #f8f8f2;
-        color: #ffffff; }
-
-#index-supporting {
-  background-color: #282a36;
-  padding: 50px 0; }
-  #index-supporting .row {
-    margin-left: 0px; }
-  #index-supporting .container > h2 {
-    text-align: center;
-    font-weight: 300;
-    font-size: 26px;
-    margin: 0 0 50px 0;
-    color: #ffffff; }
-  #index-supporting ul {
-    margin: 0;
-    list-style: none;
-    padding: 0; }
-    #index-supporting ul li a {
-      font-style: italic;
-      text-decoration: none; }
-      #index-supporting ul li a:hover {
-        color: #ffffff; }
-    #index-supporting ul li:hover {
-      border-bottom: 1px solid #1A77FF; }
-  #index-supporting .support-item h3 {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 200; }
-
-body {
-  font-family: Lato, serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #f8f8f2; }
-
-a {
-  color: #ccc; }
-
-a:hover {
-  color: #ccc;
-  text-decoration: none; }
-
-.container {
-  margin: 0px auto;
-  width: 1140; }
+      color: #ffffff; }
 
 .contact-label {
   color: #ffffff; }
@@ -129,9 +113,8 @@ a:hover {
 .contact-input {
   background: transparent;
   border-color: #1A77FF; }
-
-.contact-input:focus {
-  outline: none; }
+  .contact-input:focus {
+    outline: none; }
 
 .contact-title {
   color: #ffffff;
@@ -145,3 +128,19 @@ a:hover {
 
 .req-field {
   color: red; }
+
+body {
+  font-family: Lato, serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #f8f8f2; }
+
+a {
+  color: #ccc; }
+  a:hover {
+    color: #ccc;
+    text-decoration: none; }
+
+.container {
+  margin: 0px auto;
+  width: 1140; }

@@ -1,0 +1,25 @@
+.contact-label {
+    color: $important-text-color;
+}
+
+.contact-input {
+    background: transparent;
+    border-color: $underline-color;
+    &:focus{
+        outline: none;
+    }
+}
+
+.contact-title {
+    color: $important-text-color;
+    font-size: 32px;
+}
+.form-contact {
+    margin-top: 50px;
+}
+#btn-contact {
+    margin-top: 40px;
+}
+.req-field{
+     color: $attention-text-color;
+}

@@ -13,13 +13,13 @@
    ul {
         margin-top: 45px;
         list-style: none;
-        li {
+        &>li {
               display: inline-block;
               margin: 0 10px 0 0;
               &:hover{
                     border-bottom: 1px solid $underline-color;
                 }
-              a {
+              &>a {
                     color: $primary-text-color;
                     font-size: 16px;
                     padding-bottom: 0px;

@@ -1,0 +1,20 @@
+.main {
+  /*  height: 650px;*/
+    background-color: $secondary-bkg;
+    padding: 50px 0;
+    .row {
+        margin-left: 0px;}
+
+    h1 {
+        font-size: 53px;
+        font-weight: 700;
+        color: $important-text-color;}
+
+    p {
+        font-size: 14px; }
+
+    button {
+        background-color: $important-button-bkg;
+        color: $important-text-color;
+        font-size: 16px;}
+}        
