@@ -30,6 +30,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-header": "^1.8.8",
     "gulp-jshint": "^2.0.1",
+    "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^1.5.4",
@@ -49,6 +50,7 @@
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-safari-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
+    "pug": "^2.0.0-beta11",
     "run-sequence": "^1.2.2"
   }
 }

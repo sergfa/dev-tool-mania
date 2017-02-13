@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+include ../includes/components/head.pug
+
+<body>
+<!-- Start header section here-->
+include ../includes/components/header.pug
+<!-- End header section here-->
+
+	<!-- Start main section here-->
+	<div class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+				<h2 class="contact-title">Have a question?</h2>
+				<h3>Get in touch</h3>
+				<form class="form-contact">
+					<div class="form-group">
+					<label class="contact-label" for="contactName">Name<span class="req-field">*</span></label>
+					<input id="contactName" class="contact-input form-control" placeholder="Enter name"/>
+				</div> 
+				<div class="form-group">
+					<label for="contactEmail" class="contact-label">Email<span class="req-field">*</span></label>
+					<input id="contactEmail" class="contact-input form-control" placeholder="Enter email" type="email"/>
+				</div> 
+
+				<div class="form-group">
+					<label for="contactMsg" class="contact-label">Message<span class="req-field">*</span></label>
+					<textarea id="contactMsg" class="contact-input form-control" placeholder="Your message"  rows="4"></textarea>
+				</div> 
+					<p><span class="req-field">*</span> Indicates required field</p>
+					<button id="btn-contact" class="btn btn-default">Submit</button>  
+				</form>
+				</div>
+			</div>		
+		</div>	
+	</div>	
+	<!-- End main section here-->
+
+
+<!-- End supporting section here-->
+include ../includes/components/supporting.pug
+<!-- End supporting section here-->
+
+<!-- Start footer section here-->
+include ../includes/components/footer.pug
+<!-- End footer section here-->
+
+
+</body>
+
+</html>

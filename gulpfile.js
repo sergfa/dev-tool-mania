@@ -12,25 +12,45 @@ var header = require('gulp-header');
 var pkg = require('./package.json');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
+var pug         = require('gulp-pug');
 
+gulp.task('clean', function() {
+	return del(["dist", "build"]);
+});
 
 gulp.task('sass', function () {
   return gulp.src('./sass/main.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+	.pipe(sass().on('error', sass.logError))
+	.pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('minify-css', function() {
-    return gulp.src('css/main.css')
-        .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ': ' + details.stats.minifiedSize);
-        }))
-        .pipe(rename("main.min.css"))
-        .pipe(gulp.dest('css'));
-        
+	return gulp.src('build/css/main.css')
+		.pipe(cleanCSS({debug: true}, function(details) {
+			console.log(details.name + ': ' + details.stats.originalSize);
+			console.log(details.name + ': ' + details.stats.minifiedSize);
+		}))
+		.pipe(rename("main.min.css"))
+		.pipe(gulp.dest('dist/css'));
+		
 });
 
-gulp.task('build', function (done) {
-    return runSequence('sass', 'minify-css', done);
+
+gulp.task('templates', function() {
+	return gulp.src(['views/pages/*.pug'])
+		.pipe(pug())
+		.pipe(gulp.dest('dist/'));
 });
+
+
+gulp.task('copy-resources', function() {
+	return gulp.src(['img/**/*']).pipe(gulp.dest('dist/img'));
+});
+
+
+
+gulp.task('build', function (done) {
+	return runSequence('clean','sass', 'minify-css', 'copy-resources', 'templates', done);
+});
+
+
