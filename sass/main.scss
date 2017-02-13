@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import 'helpers/variables';
+@import 'helpers/placeholders';
 @import 'components/header';
 @import 'components/main';
 @import 'components/supporting';
@@ -7,6 +8,9 @@
 @import 'components/tool_item';
 @import 'pages/index';
 @import 'pages/contact';
+@import 'components/editor_input';
+@import 'components/editor_output';
+@import 'components/tool_section';
 
 
 body {
@@ -25,7 +29,7 @@ a {
 
 .container {
     margin: 0px auto;
-    width: 1140;
+    width: 1170px;
 }
 
 

@@ -1,0 +1,25 @@
+.tool-section{
+	background-color: $secondary-bkg;
+	padding: 20px 0;
+	.row {
+		margin-left: 0px;}
+
+	.tool-editor-title{
+		text-align: center;
+		h3, h4{
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.actions-bar{
+		margin-top: 30px;
+		width: 100%;
+		button {
+			margin-right: 10px;
+		}
+	}
+	.editors-container {
+		margin-top: 15px;
+	}	
+
+}

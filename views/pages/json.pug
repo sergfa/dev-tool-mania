@@ -1,7 +1,27 @@
 doctype html
 html
-  include ../includes/components/head.pug
-  body
-    include ../includes/components/header.pug
-    include ../includes/components/footer.pug
-    
+	head
+		include ../includes/components/head.pug
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-json.js" type="text/javascript" charset="utf-8")
+		script(src="js/lib/jquery.splitter.js" type="text/javascript" charset="utf-8")
+		link(href="css/jquery.splitter.css" rel="stylesheet")
+	body
+		include ../includes/components/header.pug
+		.tool-section
+			.container
+				.row
+					.col-md-12
+					div.tool-editor-title
+						h3 JSON 
+					div.btn-group.actions-bar
+						button.btn.btn-primary(type="button") Beautify
+						button.btn.btn-primary(type="button") Minify
+						button.btn.btn-primary(type="button") Validate
+						button.btn.btn-primary(type="button") Clear
+						button.btn.btn-primary.pull-right(type="button") Save
+						button.btn.btn-primary.pull-right(type="button") Copy
+					include ../includes/components/editors.pug
+		include ../includes/components/footer.pug
+		script(src="js/json-tool.js" type="text/javascript" charset="utf-8")
+		
