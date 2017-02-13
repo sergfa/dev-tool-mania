@@ -1,0 +1,27 @@
+.tool-item-box {
+    width: 200px;
+    height: 310px;
+    background-color: $primary-bkg;
+    text-align: center;
+    padding: 20px 10px;
+    float: left;
+    margin: 20px 20px 0 0;
+}
+
+.tool-item-icon{
+    width: 64PX;
+    height: 64px;
+    margin-top: 30px; 
+}
+
+
+.tool-item-title {
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: 500;
+    color: $important-text-color;
+}
+
+.tool-item-desc {
+    margin-top: 70px;
+}

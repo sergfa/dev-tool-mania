@@ -1,0 +1,77 @@
+#index-main {
+  /*  height: 650px;*/
+    background-color: $secondary-bkg;
+    padding: 50px 0;
+    .row {
+        margin-left: 0px;}
+
+    h1 {
+        font-size: 53px;
+        font-weight: 700;
+        color: $important-text-color;}
+
+    p {
+        font-size: 14px; }
+
+    button {
+        background-color: $important-button-bkg;
+        color: $important-text-color;
+        font-size: 16px;}
+
+   .tool-items {
+        margin-top: 50px;
+        a {
+            color: $primary-text-color;
+            text-decoration: none;
+            &:hover{
+                color: $primary-text-color;
+                color: $important-text-color;}
+          }
+     }   
+}
+
+#index-supporting {
+    background-color: $third-bkg;
+    padding: 50px 0;
+
+    .row {
+    margin-left: 0px;}
+
+   .container>h2{
+   text-align: center;
+   font-weight: 300;
+   font-size: 26px;
+   margin: 0 0 50px 0;
+   color: $important-text-color;}
+
+   ul {
+    margin : 0;
+    list-style: none;
+    padding: 0;
+    li {
+        a {
+            font-style: italic;
+            text-decoration: none;
+            &:hover{
+                color: $important-text-color;}
+        }
+        &:hover{
+            border-bottom: 1px solid $underline-color;}
+    }
+    }
+
+
+    .support-item {
+        h3 {
+        color: $important-text-color;
+        font-size: 18px;
+        font-weight: 200;}
+    }
+
+}
+
+
+
+
+
+

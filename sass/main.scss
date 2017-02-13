@@ -1,5 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
 @import 'helpers/variables';
 @import 'components/header';
+@import 'components/footer';
+@import 'components/tool_item';
+@import 'pages/_index';
+
 
 body {
     font-family: Lato, serif;
@@ -22,117 +27,6 @@ a:hover {
     width: 1140;
 }
 
-
-
-.main {
-  /*  height: 650px;*/
-    background-color: $secondary-bkg;
-    padding: 50px 0;
-}
-.main .row {
-    margin-left: 0px;
-}
-.main h1 {
-    font-size: 53px;
-    font-weight: 700;
-    color: $important-text-color;
-}
-.main p {
-   font-size: 14px; 
-}
-.main button {
-    background-color: $important-button-bkg;
-    color: $important-text-color;
-    font-size: 16px;
-}
-
-.tool-items {
-    margin-top: 50px;
-}
-
-.tool-item-box {
-    width: 200px;
-    height: 310px;
-    background-color: $primary-bkg;
-    text-align: center;
-    padding: 20px 10px;
-    float: left;
-    margin: 20px 20px 0 0;
-}
-
-.tool-item-icon{
-    width: 64PX;
-    height: 64px;
-    margin-top: 30px; 
-}
-
-.tool-items a {
-    color: $primary-text-color;
-    text-decoration: none;
-}
-
-.tool-items a:hover {
-    color: $primary-text-color;
-    color: $important-text-color;
-}
-
-
-.tool-item-title {
-    margin-top: 30px;
-    font-size: 32px;
-    font-weight: 500;
-    color: $important-text-color;
-}
-
-.tool-item-desc {
-    margin-top: 70px;
-}
-
-.supporting {
-    background-color: $third-bkg;
-    padding: 50px 0;
-}
-
-.supporting .row {
-    margin-left: 0px;
-}
-.supporting .container>h2{
-   text-align: center;
-   font-weight: 300;
-   font-size: 26px;
-   margin: 0 0 50px 0;
-   color: $important-text-color;
-}
-
-.supporting ul {
-    margin : 0;
-    list-style: none;
-    padding: 0;
-}
-
-.supporting ul>li:hover {
-    border-bottom: 1px solid $underline-color;
-}
-
-.supporting ul li>a{
-    font-style: italic;
-    text-decoration: none;
-}
-
-.supporting ul li>a:hover{
-    color: $important-text-color;
-}
-.support-item h3 {
-    color: $important-text-color;
-    font-size: 18px;
-    font-weight: 200;
-}
-
-.footer {
-    background-color: $primary-bkg;
-    padding: 20px 0;
-    font-size: 12px;
-}
 
 .contact-label {
     color: $important-text-color;
