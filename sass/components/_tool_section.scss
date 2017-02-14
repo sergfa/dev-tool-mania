@@ -16,6 +16,10 @@
 		width: 100%;
 		button {
 			margin-right: 10px;
+			background-color: $important-button-bkg;
+			&:hover{
+				border-color: $important-button-bkg;
+			}
 		}
 	}
 	.editors-container {

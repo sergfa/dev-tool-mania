@@ -15,13 +15,14 @@ html
 					div.tool-editor-title
 						h3 JSON 
 					div.btn-group.actions-bar
-						button.btn.btn-primary(type="button") Beautify
-						button.btn.btn-primary(type="button") Minify
-						button.btn.btn-primary(type="button") Validate
-						button.btn.btn-primary(type="button") Clear
-						button.btn.btn-primary.pull-right(type="button") Save
-						button.btn.btn-primary.pull-right(type="button") Copy
+						button#btn-beautify.btn.btn-primary(type="button") Beautify
+						button#btn-minify.btn.btn-primary(type="button") Minify
+						button#btn-validate.btn.btn-primary(type="button") Validate
+						button#btn-clear.btn.btn-primary(type="button") Clear
+						button#btn-save.btn.btn-primary.pull-right(type="button") Save
+						button#btn-copy.btn.btn-primary.pull-right(type="button") Copy
 					include ../includes/components/editors.pug
+					div#err-message.alert.alert-info Enter your json into the left pane
 		include ../includes/components/footer.pug
 		script(src="js/json-tool.js" type="text/javascript" charset="utf-8")
 		
