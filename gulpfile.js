@@ -51,8 +51,19 @@ gulp.task('copy-css', function() {
 	return gulp.src(['css/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-js', function() {
-	return gulp.src(['js/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
+gulp.task('copy-js-lib', function() {
+	return gulp.src(['js/lib/*.js'], { "base" : "." }).pipe(gulp.dest('dist'));
+});
+
+
+gulp.task('js-minify', function() {
+    return gulp.src(['js/**/*.js', '!js/lib/*.js'])
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(rename({suffix: ".min"}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('lint', function() {
@@ -64,7 +75,7 @@ gulp.task('lint', function() {
 
 
 gulp.task('build', function (done) {
-	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js', 'copy-css', 'templates', done);
+	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-minify', 'copy-css', 'templates', done);
 });
 
 

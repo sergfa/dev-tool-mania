@@ -2,7 +2,7 @@
 		"use strict";
 		
 		const ACTION_FAILED_MSG ="<strong>Error!</strong> Something went wrong. Please fix the json and try again.";
-		const ACTION_SUCCESS_MSG ="<strong>Success!</strong>";
+		const ACTION_SUCCESS_MSG ="<strong>Success!</strong> Action has been processed successfully";
 		
 		
 		$('.editors-container').height(500).split({
@@ -31,6 +31,18 @@
 		const jsonExample = { name: "John", age: 31, city: "New York" };
 		editorInput.setValue(JSON.stringify(jsonExample, null, 1));
 		editorInput.$blockScrolling = Infinity;
+
+
+		editorInput.getSession().on("changeAnnotation", function () {
+  		const annot = editorInput.getSession().getAnnotations();
+
+  		for (let key in annot) {
+    		if (annot.hasOwnProperty(key)){
+				console.log(annot[key].text + "on line " + " " + annot[key].row);
+			}
+      		
+  		}
+		});
 		//End create input editor
 
 		//Start create output editor
@@ -77,6 +89,29 @@
 
 		});
 
+		$('#btn-copy').on('click', function() {
+  			editorOut.selectAll();
+  			editorOut.focus();
+  			document.execCommand('copy');
+  			showMessage(ACTION_SUCCESS_MSG, 'success');
+			  
+		});
+
+
+		$('#btn-save').on("click",function(){
+			try{
+				const text = editorOut.getValue();
+				const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+				saveAs(blob, "json-output.json");
+				showMessage(ACTION_SUCCESS_MSG, 'success');
+			}
+			catch(err){
+				showMessage(ACTION_FAILED_MSG, 'danger');
+			}	
+
+		});
+
+		
 		//End add click listeners to action buttons
 		
 	})();

@@ -5,7 +5,7 @@
         margin: 0;
         line-height: 80px;
         color: $important-text-color;
-        font-weight: 700;
+        font-size: $big-font-size;
     }
     a {
         text-decoration: none;
@@ -24,9 +24,9 @@
                 }
               &>a {
                     color: $primary-text-color;
-                    font-size: $medium-font-size;
+                    font-size: $small-font-size;
                     padding-bottom: 0px;
-                    font-weight: 200;
+                    font-weight: 100;
                     &:hover {
                         background-color: transparent;
                         font-weight: 700;

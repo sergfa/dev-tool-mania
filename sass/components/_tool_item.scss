@@ -3,9 +3,11 @@
     height: 310px;
     background-color: $primary-bkg;
     text-align: center;
-    padding: 20px 10px;
     float: left;
     margin: 20px 20px 0 0;
+    header {
+            @include trapezoid($fancy-color-1, $fancy-color-2, -6deg)
+       }
 }
 
 .tool-item-icon{

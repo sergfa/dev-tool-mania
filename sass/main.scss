@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import 'helpers/variables';
 @import 'helpers/placeholders';
+@import 'helpers/mixins';
 @import 'components/header';
 @import 'components/main';
 @import 'components/supporting';
@@ -11,12 +12,13 @@
 @import 'components/editor_input';
 @import 'components/editor_output';
 @import 'components/tool_section';
+@import 'helpers/mixins';
 
 
 body {
     font-family: Lato, serif;
     font-size: $medium-font-size;
-    font-weight: 400;
+    font-weight: 100;
     color: $primary-text-color;
 }
 

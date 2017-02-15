@@ -1,0 +1,9 @@
+
+@mixin trapezoid ( $color1, $color2, $radius){
+      background-image: -webkit-linear-gradient($color1, $color2);
+            background-image: -o-linear-gradient($color1, $color2);
+            background-image: linear-gradient($color1, $color2);
+            transform: skewY($radius);
+            transform-origin: top left;
+      
+}
