@@ -34,5 +34,10 @@ a {
     width: 1170px;
 }
 
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+
 
 

@@ -2,10 +2,9 @@
 		"use strict";
 		
 		const ACTION_FAILED_MSG ="<strong>Error!</strong> Something went wrong. Please fix the json and try again.";
-		const ACTION_SUCCESS_MSG ="<strong>Success!</strong> Action has been processed successfully";
 		
 		
-		$('.editors-container').height(500).split({
+		$('.editors-container').height(600).split({
 			orientation: 'vertical',
 			limit: 10,
 			position: '25%', // if there is no percentage it interpret it as pixels
@@ -16,10 +15,8 @@
 		});
 	
 		//Start private functions
-		function showMessage(msg, type){
+		function showMessage(msg){
 			const $messageBox = $('#err-message');
-			$messageBox.removeClass();
-			$messageBox.addClass("alert").addClass("alert-" + type);
 			$messageBox.html(msg);
 		}
 		//
@@ -57,7 +54,7 @@
 		$('#btn-clear').on("click",function(){
 			editorInput.setValue("");
 			editorOut.setValue("");
-			showMessage(ACTION_SUCCESS_MSG, 'success');
+			showMessage("<strong>Success!</strong> All cleared.", 'success');
 		});
 
 
@@ -65,7 +62,7 @@
 			try{
 				const input = JSON.parse(editorInput.getValue());
 				editorOut.setValue(JSON.stringify(input, null, 4));
-				showMessage(ACTION_SUCCESS_MSG, 'success');
+				showMessage("<strong>Success!</strong> JSON has been beautified successfully.", 'success');
 			}
 			catch(err){
 				editorOut.setValue("");
@@ -79,7 +76,7 @@
 			try{
 				const input = JSON.parse(editorInput.getValue());
 				editorOut.setValue(JSON.stringify(input, null, 0));
-				showMessage(ACTION_SUCCESS_MSG, 'success');
+				showMessage("<strong>Success!</strong> JSON has been minified successfully.", 'success');
 			}
 			catch(err){
 				editorOut.setValue("");
@@ -93,7 +90,7 @@
   			editorOut.selectAll();
   			editorOut.focus();
   			document.execCommand('copy');
-  			showMessage(ACTION_SUCCESS_MSG, 'success');
+  			showMessage("<strong>Success!</strong> JSON has been copied successfully.", 'success');
 			  
 		});
 
@@ -103,7 +100,7 @@
 				const text = editorOut.getValue();
 				const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
 				saveAs(blob, "json-output.json");
-				showMessage(ACTION_SUCCESS_MSG, 'success');
+				showMessage("<strong>Success!</strong> JSON has been saved successfully.", 'success');
 			}
 			catch(err){
 				showMessage(ACTION_FAILED_MSG, 'danger');
@@ -113,5 +110,5 @@
 
 		
 		//End add click listeners to action buttons
-		
+
 	})();

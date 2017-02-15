@@ -11,8 +11,24 @@
 			padding: 0;
 		}
 	}
-	.actions-bar{
-		margin-top: 30px;
+	.editors-container {
+		margin-top: 10px;
+	}	
+	.alert{
+		background-color: $primary-bkg;
+    	color: rgba(0,255,119,1);
+		margin: 10px 0;
+		font-family: monospace;
+		border-color: #1D1D1D;;
+		box-shadow: inset 0px 0px 1px 10px #000;
+    	border-radius: 6px;
+		border-width: 10px;
+		
+		.blink_cursor{
+			animation: blinker 1s linear infinite;
+		}
+		.actions-bar{
+		margin-top: 15px;
 		width: 100%;
 		button {
 			margin-right: 10px;
@@ -20,10 +36,14 @@
 			&:hover{
 				border-color: $important-button-bkg;
 			}
+			 
+		}
+		.btn-last{
+				margin-right: 0px;	
 		}
 	}
-	.editors-container {
-		margin-top: 10px;
-	}	
+	
+	}
 
+	
 }
