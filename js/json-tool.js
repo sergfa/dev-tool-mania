@@ -2,9 +2,12 @@
 		"use strict";
 		
 		const ACTION_FAILED_MSG ="<strong>Error!</strong> Something went wrong. Please fix the json and try again.";
-		
-		
-		$('.editors-container').height(600).split({
+		const FILE_MODE_JSON = 'json';
+		const FILE_MODE_YAML = 'yaml';
+
+		let fileMode = FILE_MODE_JSON;
+
+		$('.editors-container').height(700).split({
 			orientation: 'vertical',
 			limit: 10,
 			position: '25%', // if there is no percentage it interpret it as pixels
@@ -61,8 +64,10 @@
 		$('#btn-beautify').on("click",function(){
 			try{
 				const input = JSON.parse(editorInput.getValue());
+				editorOut.getSession().setMode("ace/mode/json");
 				editorOut.setValue(JSON.stringify(input, null, 4));
 				showMessage("<strong>Success!</strong> JSON has been beautified successfully.", 'success');
+				fileMode = FILE_MODE_JSON;
 			}
 			catch(err){
 				editorOut.setValue("");
@@ -75,8 +80,10 @@
 		$('#btn-minify').on("click",function(){
 			try{
 				const input = JSON.parse(editorInput.getValue());
+				editorOut.getSession().setMode("ace/mode/json");
 				editorOut.setValue(JSON.stringify(input, null, 0));
 				showMessage("<strong>Success!</strong> JSON has been minified successfully.", 'success');
+				fileMode = FILE_MODE_JSON;
 			}
 			catch(err){
 				editorOut.setValue("");
@@ -99,7 +106,7 @@
 			try{
 				const text = editorOut.getValue();
 				const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-				saveAs(blob, "json-output.json");
+				saveAs(blob, "output." + fileMode);
 				showMessage("<strong>Success!</strong> JSON has been saved successfully.", 'success');
 			}
 			catch(err){
@@ -107,6 +114,25 @@
 			}	
 
 		});
+
+
+
+		$('#btn-yaml').on("click",function(){
+			try{
+				const text = editorInput.getValue();
+				const obj = JSON.parse(text);
+				const yamlString = YAML.stringify(obj, 4);
+				editorOut.getSession().setMode("ace/mode/text");
+				editorOut.setValue(yamlString);
+				showMessage("<strong>Success!</strong> JSON has been saved successfully.", 'success');
+				fileMode = FILE_MODE_YAML;
+			}
+			catch(err){
+				showMessage(ACTION_FAILED_MSG, 'danger');
+			}	
+
+		});
+
 
 		
 		//End add click listeners to action buttons

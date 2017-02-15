@@ -30,11 +30,14 @@
 		.actions-bar{
 		margin-top: 15px;
 		width: 100%;
+		font-family: $primary-font;
+		font-weight: 100;
 		button {
 			margin-right: 10px;
 			background-color: $important-button-bkg;
+			border-color: $important-button-bkg;
 			&:hover{
-				border-color: $important-button-bkg;
+				font-weight: 700;
 			}
 			 
 		}
