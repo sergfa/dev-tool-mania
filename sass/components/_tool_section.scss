@@ -12,23 +12,23 @@
 		}
 	}
 	.editors-container {
-		margin-top: 10px;
+		margin-top: 0px;
 	}	
 	.alert{
 		background-color: $primary-bkg;
     	color: rgba(0,255,119,1);
-		margin: 10px 0;
+		margin: 20px 0 0 0;
 		font-family: monospace;
 		border-color: #1D1D1D;;
 		box-shadow: inset 0px 0px 1px 10px #000;
-    	border-radius: 6px;
+    	border-radius: 0px;
 		border-width: 10px;
 		
 		.blink_cursor{
 			animation: blinker 1s linear infinite;
 		}
 		.actions-bar{
-		margin-top: 15px;
+		margin-top: 30px;
 		width: 100%;
 		font-family: $primary-font;
 		font-weight: 100;
@@ -36,15 +36,19 @@
 			margin-right: 10px;
 			background-color: $important-button-bkg;
 			border-color: $important-button-bkg;
+			border-radius: 0;
 			&:hover{
-				font-weight: 700;
-			}
+				font-weight: 700;}
 			 
+			}
+		
 		}
-		.btn-last{
-				margin-right: 0px;	
+		.stats {
+			font-size: 14px;
+			font-family: $primary-font;
+			font-weight: 100;
+			color:  $default-a-text-color;
 		}
-	}
 	
 	}
 

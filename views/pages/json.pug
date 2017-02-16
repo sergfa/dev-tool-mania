@@ -16,18 +16,31 @@ html
 					.col-md-12
 					div.tool-editor-title
 					div.alert.alert-info
-						span JSON$&nbsp;
-						span#err-message Enter json into the left pane.
-						span.blink_cursor _
-						div.btn-group.actions-bar
-							button#btn-beautify.btn.btn-primary(type="button") Beautify
-							button#btn-minify.btn.btn-primary(type="button") Minify
-							button#btn-yaml.btn.btn-primary(type="button") to YAML
-							button#btn-clear.btn.btn-primary.pull-right.btn-last(type="button") Clear
-							button#btn-save.btn.btn-primary.pull-right(type="button") Save
-							button#btn-copy.btn.btn-primary.pull-right(type="button") Copy
+						div.row
+							div.col-md-6
+								span JSON$&nbsp;
+								span#err-message Enter json into the left pane.
+								span.blink_cursor _
+								div.btn-group.actions-bar
+									button#btn-beautify.btn.btn-primary(type="button") Beautify
+									button#btn-minify.btn.btn-primary(type="button") Minify
+									button#btn-yaml.btn.btn-primary(type="button") to YAML
+									button#btn-save.btn.btn-primary(type="button") Save
+									button#btn-copy.btn.btn-primary(type="button") Copy
+									button#btn-clear.btn.btn-primary(type="button") Clear
+							div.col-md-6.stats
+								div 
+									span Source Length: 
+									span#source-length N/A
+								div
+									span Output Length: 
+									span#output-length  N/A
+								div
+									span Efficiency: 
+									span#efficiency N/A
 					include ../includes/components/editors.pug
 		include ../includes/components/supporting.pug
 		include ../includes/components/footer.pug
-		script(src="js/json-tool.min.js" type="text/javascript" charset="utf-8")
+		script(src="js/json/main.min.js" type="text/javascript" charset="utf-8")
+		
 		

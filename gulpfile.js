@@ -56,14 +56,26 @@ gulp.task('copy-js-lib', function() {
 });
 
 
-gulp.task('js-minify', function() {
-    return gulp.src(['js/**/*.js', '!js/lib/*.js'])
-        .pipe(babel({
+gulp.task('js-json-page', function() {
+    return gulp.src(['js/utils.js','js/json-tool.js', '!js/lib/*.js'])
+        .pipe(concat("main.js"))
+		.pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js/json'));
+});
+
+gulp.task('js-css-page', function() {
+    return gulp.src(['js/utils.js','js/css-tool.js', '!js/lib/*.js'])
+        .pipe(concat("main.js"))
+		.pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(rename({suffix: ".min"}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js/css'));
 });
 
 gulp.task('lint', function() {
@@ -75,7 +87,7 @@ gulp.task('lint', function() {
 
 
 gulp.task('build', function (done) {
-	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-minify', 'copy-css', 'templates', done);
+	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page', 'copy-css', 'templates', done);
 });
 
 

@@ -85,5 +85,5 @@
     "yui"           : false,    // Yahoo User Interface,
 
     // Custom Globals
-    "globals"       : {"ace": true, "saveAs": true, "blink" : true, "YAML": true, "CleanCSS": true}       // additional predefined global variables
+    "globals"       : {"ace": true, "saveAs": true, "blink" : true, "YAML": true, "CleanCSS": true, "DevUtils": true}       // additional predefined global variables
 }

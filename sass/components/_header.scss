@@ -3,16 +3,20 @@
     h2 {
         padding: 0;
         margin: 0;
-        line-height: 80px;
+        line-height: 50px;
         color: $important-text-color;
         font-size: $big-font-size;
+        display: inline-block;
+        //@include trapezoid($fancy-color-1, $fancy-color-2, 3deg)
     }
     a {
         text-decoration: none;
     }
    ul {
-        margin-top: 45px;
+        margin-top: 0px;
+        padding: 0 0 0 45px;
         list-style: none;
+        display: inline-block;
         &>li {
               display: inline-block;
               margin: 0 10px 0 0;

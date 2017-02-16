@@ -30,12 +30,19 @@
 		}
 	};
 
-
+	function calculateSize(){
+		const sizeOutput = editorOut.getValue().length;
+		const sizeInput = editorInput.getValue().length;
+		$('#output-length').text(sizeOutput+'');
+		$('#source-length').text(sizeInput+'');
+		const efficiency = DevUtils.calculateEfficienty(sizeOutput, sizeInput);
+		$('#efficiency').text(efficiency);
+	}
 
 	$('.editors-container').height(700).split({
 		orientation: 'vertical',
 		limit: 10,
-		position: '25%', // if there is no percentage it interpret it as pixels
+		position: '40%', // if there is no percentage it interpret it as pixels
 		onDrag: function () {
 			editorInput.resize();
 			editorOut.resize();
@@ -57,16 +64,6 @@
 	editorInput.setValue(example);
 	editorInput.$blockScrolling = Infinity;
 
-	editorInput.getSession().on("changeAnnotation", function () {
-		const annot = editorInput.getSession().getAnnotations();
-
-		for (let key in annot) {
-			if (annot.hasOwnProperty(key)) {
-				console.log(annot[key].text + " on line " + " " + annot[key].row);
-			}
-
-		}
-	});
 	//End create input editor
 
 	//Start create output editor
@@ -94,6 +91,7 @@
 				showMessage(ACTION_FAILED_MSG, 'danger');
 			}else{
 				editorOut.setValue(output.styles);
+				calculateSize();
 				showMessage("<strong>Success!</strong> CSS has been beautified successfully.", 'success');
 				fileMode = FILE_MODE_CSS;
 			}
@@ -116,9 +114,10 @@
 				showMessage(ACTION_FAILED_MSG, 'danger');
 			}else{
 				editorOut.setValue(output.styles);
-				const efficiency = Math.ceil(output.stats.efficiency * 100); 
-				showMessage("<strong>Success!</strong> CSS has been minified successfully. Efficiency: " + efficiency+"%", 'success');
+				calculateSize();
+				showMessage("<strong>Success!</strong> CSS has been minified successfully.", 'success');
 				fileMode = FILE_MODE_CSS;
+
 			}
 		}
 		catch (err) {
