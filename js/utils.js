@@ -30,9 +30,27 @@ const DevUtils = (function () {
         return result;
     }
 
+    function storeSessionItem(key, value){
+        if(sessionStorage){
+            sessionStorage.setItem(key, value);
+        }
+    }
+
+    function getSessionItem(key){
+        let value = "";
+        if(sessionStorage){
+           value = sessionStorage.getItem(key);
+        }
+
+        return value;
+    }
+    
+
     return {
         formatBytes: formatBytes,
-        calculateEfficienty: calculateEfficienty
+        calculateEfficienty: calculateEfficienty,
+        storeItem: storeSessionItem,
+        retrieveItem: getSessionItem
     };
 
     
