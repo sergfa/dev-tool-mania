@@ -49,8 +49,68 @@
 			font-weight: 100;
 			color:  $default-a-text-color;
 		}
+		.controls{
+			.btn-icon{
+				width: 24px;
+				height: 24px;
+				float: right;
+				cursor: pointer;
+			}
+		}
 	
 	}
 
-	
+	#tool-settings{
+			font-family: $primary-font;
+			.modal-content{
+				width: 90%;
+				margin: 0 auto;
+				background-color: $secondary-bkg;
+			}
+			#settings-editor{
+				height: 500px;
+				width: 50%;
+				float: right;
+			}
+			.settings-instructions{
+				height: 500px;
+				width: 50%;
+				float: right;
+				color: $primary-text-color;
+				pre{
+					background-color: $ace-twilight;
+					color: $primary-text-color;
+					height: 100%;
+					.inst-property{
+						color: #eeddcc;
+					}
+					.inst-value{
+						color: #bbf;
+					}
+
+					.inst-comment{
+						color: #8a8;
+					}
+					border: 0;
+					
+					
+				}
+			}
+			.modal-title{
+				color: $primary-text-color;
+			}
+			.modal-footer{
+				clear: both;
+				button {
+					background-color: $important-button-bkg;
+					border-color: $important-button-bkg;
+					border-radius: 0;
+					color: $important-text-color;
+					&:hover{
+						font-weight: 700;}
+			 		}	
+			}
+			
+		}
+		
 }

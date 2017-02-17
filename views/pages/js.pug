@@ -27,7 +27,7 @@ html
 									button#btn-save.btn.btn-primary(type="button") Save
 									button#btn-copy.btn.btn-primary(type="button") Copy
 									button#btn-clear.btn.btn-primary(type="button") Clear
-							div.col-md-6.stats
+							div.col-md-4.stats
 								div 
 									span Source Length: 
 									span#source-length N/A
@@ -37,6 +37,9 @@ html
 								div
 									span Efficiency: 
 									span#efficiency N/A
+							div.col-md-2.controls.pull-right
+								img#btn-settings.btn-icon(src="img/settings-100.png")
+								include ../includes/components/modal_settings.pug
 					include ../includes/components/editors.pug
 		include ../includes/components/supporting.pug
 		include ../includes/components/footer.pug

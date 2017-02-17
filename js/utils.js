@@ -44,13 +44,31 @@ const DevUtils = (function () {
 
         return value;
     }
+
+    function storeLocalItem(key, value){
+        if(localStorage){
+            localStorage.setItem(key, value);
+        }
+    }
+
+    function getLocalItem(key){
+        let value = "";
+        if(localStorage){
+           value = localStorage.getItem(key);
+        }
+
+        return value;
+    }
+
     
 
     return {
         formatBytes: formatBytes,
         calculateEfficienty: calculateEfficienty,
         storeItem: storeSessionItem,
-        retrieveItem: getSessionItem
+        retrieveItem: getSessionItem,
+        storeLocalItem: storeLocalItem,
+        getLocalItem: getLocalItem
     };
 
     
