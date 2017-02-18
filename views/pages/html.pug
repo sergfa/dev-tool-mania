@@ -6,7 +6,7 @@ html
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-json.js" type="text/javascript" charset="utf-8")
 		script(src="js/lib/jquery.splitter.js" type="text/javascript" charset="utf-8")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js")
-		script(src="js/lib/cleancss-browser.js" type="text/javascript" charset="utf-8")
+		script(src="js/lib/htmlminifier.min.js" type="text/javascript" charset="utf-8")
 		link(href="css/jquery.splitter.css" rel="stylesheet")
 	body
 		include ../includes/components/header.pug
@@ -18,16 +18,15 @@ html
 					div.alert.alert-info
 						div.row
 							div.col-md-6
-								span CSS$&nbsp;
+								span HTML$&nbsp;
 								span#err-message Enter html into the left pane.
 								span.blink_cursor _
 								div.btn-group.actions-bar
-									button#btn-beautify.btn.btn-primary(type="button") Beautify
 									button#btn-minify.btn.btn-primary(type="button") Minify
 									button#btn-save.btn.btn-primary(type="button") Save
 									button#btn-copy.btn.btn-primary(type="button") Copy
 									button#btn-clear.btn.btn-primary(type="button") Clear
-							div.col-md-6.stats
+							div.col-md-4.stats
 								div 
 									span Source Length: 
 									span#source-length N/A
@@ -37,6 +36,11 @@ html
 								div
 									span Efficiency: 
 									span#efficiency N/A
+							div.col-md-2.controls.pull-right
+								img#btn-settings.btn-icon(src="img/settings-100.png")
+								a(href="https://www.npmjs.com/package/html-minifier" target="_blank")
+									img#btn-help.btn-icon(src="img/help-100.png")
+								include ../includes/components/modal_settings.pug
 					include ../includes/components/editors.pug
 		include ../includes/components/supporting.pug
 		include ../includes/components/footer.pug

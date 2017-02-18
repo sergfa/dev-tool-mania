@@ -248,6 +248,19 @@
 	});
 
 
+	$('#restore-settings').on("click", function () {
+		try{
+			const defaultSettingsTxt = JSON.stringify(default_settings, null, 4);
+			DevUtils.storeLocalItem("js-user-settings", defaultSettingsTxt);
+			editorSettings.setValue(defaultSettingsTxt,1);
+		}
+		catch(err){
+
+		}
+
+	});
+	
+
 	//End add click listeners to action buttons
 
 })();

@@ -50,11 +50,13 @@
 			color:  $default-a-text-color;
 		}
 		.controls{
+			margin-top: -10px;
 			.btn-icon{
 				width: 24px;
 				height: 24px;
 				float: right;
 				cursor: pointer;
+				margin-right: 5px;
 			}
 		}
 	
