@@ -10,29 +10,37 @@ include ../includes/components/header.pug
 <!-- End header section here-->
 
 	<!-- Start main section here-->
-	<div class="main">
+	<div class="main contact-main">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 				<h2 class="contact-title">Have a question?</h2>
 				<h3>Get in touch</h3>
+				<div id="alert-container" class="alert">
+					<span id="alert-message"></span>
+				</div>
 				<form class="form-contact">
+					<fieldset>
 					<div class="form-group">
-					<label class="contact-label" for="contactName">Name<span class="req-field">*</span></label>
-					<input id="contactName" class="contact-input form-control" placeholder="Enter name"/>
-				</div> 
-				<div class="form-group">
-					<label for="contactEmail" class="contact-label">Email<span class="req-field">*</span></label>
-					<input id="contactEmail" class="contact-input form-control" placeholder="Enter email" type="email"/>
-				</div> 
-
-				<div class="form-group">
-					<label for="contactMsg" class="contact-label">Message<span class="req-field">*</span></label>
-					<textarea id="contactMsg" class="contact-input form-control" placeholder="Your message"  rows="4"></textarea>
-				</div> 
+						<label class="contact-label" for="contactName">Name<span class="req-field">*</span></label>
+						<input id="contactName" class="contact-input form-control" placeholder="Enter name" required/>
+					</div> 
+					</fieldset>
+					<fieldset>
+					<div class="form-group">
+						<label for="contactEmail" class="contact-label">Email<span class="req-field">*</span></label>
+						<input id="contactEmail" class="contact-input form-control" placeholder="Enter email" type="email" required/>
+					</div> 
+					</fieldset>	
+					<fieldset>
+					<div class="form-group">
+						<label for="contactMsg" class="contact-label">Message<span class="req-field">*</span></label>
+						<textarea id="contactMsg" maxlength="2048" class="contact-input form-control" placeholder="Your message"  rows="4" required></textarea>
+					</div> 
+					</fieldset>
 					<p><span class="req-field">*</span> Indicates required field</p>
 				</form>
-					<button id="btn-submit-msg" class="btn btn-default">Submit</button>  
+					<button id="btn-submit-msg" class="btn btn-primary">Submit</button>  
 				
 				</div>
 			</div>		

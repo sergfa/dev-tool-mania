@@ -1,26 +1,42 @@
-.contact-label {
-    color: $important-text-color;
-}
+.contact-main{
+	.contact-label {
+		color: $important-text-color;
+	}
 
-.contact-input {
-    background: transparent;
-    border-color: $underline-color;
-    &:focus{
-        outline: none;
-    }
-    color: $primary-text-color;
-}
+	.contact-input {
+		background: transparent;
+		border-color: $underline-color;
+		&:focus{
+			outline: none;
+		}
+		color: $primary-text-color;}
 
-.contact-title {
-    color: $important-text-color;
-    font-size: $super-big-font-size;
-}
-.form-contact {
-    margin-top: 50px;
-}
-#btn-contact {
-    margin-top: 40px;
-}
-.req-field{
-     color: $attention-text-color;
+	.contact-title {
+		color: $important-text-color;
+		font-size: $super-big-font-size;}
+	
+	.form-contact {
+	margin-top: 10px;}
+	
+	#btn-submit-msg {
+		margin-top: 40px;}
+	
+	#alert-container {
+		font-size: 14px;
+		font-weight: 100;
+		margin-top: 10px;}
+	.req-field{
+		color: $attention-text-color;}
+
+		button {
+		background-color: $important-button-bkg;
+		color: $important-text-color;
+		font-size: $medium-font-size;
+		&:hover, &:focus, &:active, &:focus{
+			background-color: $important-button-bkg !important;
+			color: $important-text-color !important;
+			
+		}
+		}
+	
 }
