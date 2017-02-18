@@ -19,9 +19,12 @@
     list-style: none;
     padding: 0;
     li {
+        margin-top: 10px;
         a {
-            font-style: italic;
             text-decoration: none;
+            font-size: $small-font-size;
+            font-weight: 700;
+            color:$important-text-color;
             &:hover{
                 color: $important-text-color;}
         }
@@ -33,7 +36,7 @@
 
     .support-item {
         h3 {
-        color: $important-text-color;
+        color: $default-a-text-color;
         font-size: $medium-font-size;
         font-weight: 200;}
     }
