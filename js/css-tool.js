@@ -6,29 +6,114 @@
 
 	let fileMode = FILE_MODE_CSS;
 
-	const beautifyOptions = {
-		format: {
-			breaks: {
-				afterAtRule: true,
-				afterBlockBegins: true,
-				afterBlockEnds: true,
-				afterComment: true,
-				afterProperty: true,
-				afterRuleBegins: true,
-				afterRuleEnds: true,
-				beforeBlockEnds: true,
-				betweenSelectors: true
-			},
-			indentBy: 4,
-			indentWith: 'space',
-			spaces: {
-				aroundSelectorRelation: true,
-				beforeBlockBegins: true,
-				beforeValue: true
-			},
-			wrapAt: false
+	const default_settings = {
+		minify: {
+			format: {
+				breaks: {
+					afterAtRule: false,
+					afterBlockBegins: false,
+					afterBlockEnds: false,
+					afterComment: false,
+					afterProperty: false,
+					afterRuleBegins: false,
+					afterRuleEnds: false,
+					beforeBlockEnds: false,
+					betweenSelectors: false
+				},
+				indentBy: 0,
+				indentWith: 'space',
+				spaces: {
+					aroundSelectorRelation: false,
+					beforeBlockBegins: false,
+					beforeValue: false
+				},
+				wrapAt: false
+			}
+		},
+		beautify: {
+			format: {
+				breaks: {
+					afterAtRule: true,
+					afterBlockBegins: true,
+					afterBlockEnds: true,
+					afterComment: true,
+					afterProperty: true,
+					afterRuleBegins: true,
+					afterRuleEnds: true,
+					beforeBlockEnds: true,
+					betweenSelectors: true
+				},
+				indentBy: 4,
+				indentWith: 'space',
+				spaces: {
+					aroundSelectorRelation: true,
+					beforeBlockBegins: true,
+					beforeValue: true
+				},
+				wrapAt: false
+			}
 		}
+
+
 	};
+
+
+	const settings_instructions =
+	`<pre>// minify default options
+  format: {
+    breaks: { <span class="inst-comment">// controls where to insert breaks </span>
+      <span class="inst-property">afterAtRule</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after an at-rule; e.g. \`@charset\`; defaults to \`false\` </span>
+      <span class="inst-property">afterBlockBegins</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after a block begins; e.g. \`@media\`; defaults to \`false\` </span>
+      <span class="inst-property">afterBlockEnds</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after a block ends, defaults to \`false\` </span>
+      <span class="inst-property">afterComment</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after a comment; defaults to \`false\` </span>
+     <span class="inst-property"> afterProperty</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after a property; defaults to \`false\` </span>
+     <span class="inst-property"> afterRuleBegins</span>:  <span class="inst-value">false</span>, //<span class="inst-comment"> controls if a line break comes after a rule begins; defaults to \`false\` </span>
+      <span class="inst-property">afterRuleEnds</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes after a rule ends; defaults to \`false\` </span>
+      <span class="inst-property">beforeBlockEnds</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a line break comes before a block ends; defaults to \`false\` </span>
+      <span class="inst-property">betweenSelectors</span>:  <span class="inst-value">false </span>// <span class="inst-comment">controls if a line break comes between selectors; defaults to \`false\` </span>
+    },
+    <span class="inst-property">indentBy</span>:  <span class="inst-value">0</span>, // <span class="inst-comment">controls number of characters to indent with; defaults to \`0\` </span>
+    <span class="inst-property">indentWith</span>:  <span class="inst-value">'space'</span>, // <span class="inst-comment">controls a character to indent with, can be \`'space'\` or \`'tab'\`; defaults to \`'space'\` </span>
+    spaces: { <span class="inst-comment">// controls where to insert spaces </span>
+      <span class="inst-property">aroundSelectorRelation</span>:  <span class="inst-value">false</span>, //<span class="inst-comment"> controls if spaces come around selector relations; e.g. \`div > a\`; defaults to \`false\` </span>
+      <span class="inst-property">beforeBlockBegins</span>:  <span class="inst-value">false</span>, // <span class="inst-comment">controls if a space comes before a block begins; e.g. \`.block {\`; defaults to \`false\` </span>
+      <span class="inst-property">beforeValue</span>:  <span class="inst-value">false</span> //<span class="inst-comment"> controls if a space comes before a value; e.g. \`width: 1rem\`; defaults to \`false\` </span>
+    },
+    <span class="inst-property">wrapAt</span>:  <span class="inst-value">false</span> // <span class="inst-comment">controls maximum line length; defaults to \`false\` </span>
+  }
+</pre>`;
+
+
+
+	function getSettings(type) {
+		const userSettings = DevUtils.getLocalItem("css-user-settings");
+		if (userSettings) {
+			try {
+				const userSettingsObj = JSON.parse(userSettings);
+				if (userSettingsObj[type]) {
+					return userSettingsObj[type];
+				}
+			} catch (err) { }
+		}
+
+		return default_settings[type];
+
+	}
+
+	function getSettingsAsString() {
+		const userSettings = DevUtils.getLocalItem("css-user-settings");
+		if (userSettings) {
+			try {
+				const userSettingsObj = JSON.parse(userSettings);
+				return JSON.stringify(userSettingsObj, null, 4);
+
+			} catch (err) { }
+		}
+
+		return JSON.stringify(default_settings, null, 4);
+
+	}
+
 
 	function calculateSize() {
 		const sizeOutput = editorOut.getValue().length;
@@ -71,6 +156,20 @@
 
 	//End create input editor
 
+	//Start settings editor
+	const editorSettings = ace.edit("settings-editor");
+	editorSettings.setTheme("ace/theme/twilight");
+	editorSettings.getSession().setMode("ace/mode/json");
+	const jsSettings = getSettingsAsString();
+	editorSettings.setValue(jsSettings, 1);
+
+	//End settings editor
+
+	//start init settings instructions
+	$('.settings-instructions').html(settings_instructions);
+	//end init settings instructions
+
+
 	//Start create output editor
 	const editorOut = ace.edit("rightPane");
 	editorOut.setTheme("ace/theme/twilight");
@@ -90,6 +189,7 @@
 	$('#btn-beautify').on("click", function () {
 		try {
 			const input = editorInput.getValue();
+			const beautifyOptions = getSettings('beautify');
 			const output = new CleanCSS(beautifyOptions).minify(input);
 			editorOut.getSession().setMode("ace/mode/css");
 			editorOut.setValue(output.styles);
@@ -109,7 +209,8 @@
 		try {
 			const input = editorInput.getValue();
 			editorOut.getSession().setMode("ace/mode/css");
-			const output = new CleanCSS({}).minify(input);
+			const minifySettings = getSettings('minify');
+			const output = new CleanCSS(minifySettings).minify(input);
 			editorOut.setValue(output.styles);
 			calculateSize();
 			showMessage("<strong>Success!</strong> CSS has been minified successfully.", 'success');
@@ -146,6 +247,39 @@
 
 	});
 
+
+	$('#btn-settings').on("click", function () {
+		$('#tool-settings').modal();
+	});
+
+
+	$('#save-settings').on("click", function () {
+		try{
+			const text = editorSettings.getValue();
+			const jsonObj = JSON.parse(text);
+			const validatedText = JSON.stringify(jsonObj);
+			DevUtils.storeLocalItem("css-user-settings", validatedText);
+		}
+		catch(err){
+
+		}
+
+		$('#tool-settings').modal('hide');
+	});
+
+
+	$('#restore-settings').on("click", function () {
+		try{
+			const defaultSettingsTxt = JSON.stringify(default_settings, null, 4);
+			DevUtils.storeLocalItem("css-user-settings", defaultSettingsTxt);
+			editorSettings.setValue(defaultSettingsTxt,1);
+		}
+		catch(err){
+
+		}
+
+	});
+	
 
 
 

@@ -2,6 +2,7 @@
 <html>
 <head>
 	include ../includes/components/head.pug
+	<script src="js/lib/aws-sdk.min.js" type="text/javascript" charset="utf-8"></script>
 </head>	
 <body>
 <!-- Start header section here-->
@@ -30,8 +31,9 @@ include ../includes/components/header.pug
 					<textarea id="contactMsg" class="contact-input form-control" placeholder="Your message"  rows="4"></textarea>
 				</div> 
 					<p><span class="req-field">*</span> Indicates required field</p>
-					<button id="btn-contact" class="btn btn-default">Submit</button>  
 				</form>
+					<button id="btn-submit-msg" class="btn btn-default">Submit</button>  
+				
 				</div>
 			</div>		
 		</div>	
@@ -47,7 +49,7 @@ include ../includes/components/supporting.pug
 include ../includes/components/footer.pug
 <!-- End footer section here-->
 
-
+<script src="js/contact/main.min.js" type="text/javascript" charset="utf-8"/></script>
 </body>
 
 </html>

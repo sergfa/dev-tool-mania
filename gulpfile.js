@@ -101,6 +101,18 @@ gulp.task('js-html-page', function() {
         .pipe(gulp.dest('dist/js/html'));
 });
 
+
+gulp.task('contact-html-page', function() {
+    return gulp.src(['js/contact.js', '!js/lib/*.js'])
+        .pipe(concat("main.js"))
+		.pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(rename({suffix: ".min"}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js/contact'));
+});
+
 gulp.task('lint', function() {
 	return gulp.src(['js/**/*.js'])
 		.pipe(jshint())
@@ -110,7 +122,7 @@ gulp.task('lint', function() {
 
 
 gulp.task('build', function (done) {
-	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page','js-html-page' , 'js-js-page','copy-css', 'templates', done);
+	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page','js-html-page' , 'js-js-page','contact-html-page', 'copy-css', 'templates', done);
 });
 
 

@@ -6,28 +6,28 @@
 
 	let fileMode = FILE_MODE_JS;
 
-	const settings_instructions = 
+	const settings_instructions =
 
-`<pre><span>//default minify settings</span>
-<span class="inst-property">sequences</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// join consecutive statemets with the “comma operator</span>
-<span class="inst-property">properties</span>    : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize property access: a["foo"] → a.foo</span>
-<span class="inst-property">dead_code</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// discard unreachable code</span>
-<span class="inst-property">drop_debugger</span> : <span class="inst-value">true</span>,  <span class="inst-comment">// discard “debugger” statements</span>
-<span class="inst-property">unsafe</span>        : <span class="inst-value">false</span>, <span class="inst-comment">// some unsafe optimizations (see below)</span>
-<span class="inst-property">conditionals</span>  : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize if-s and conditional expressions</span>
-<span class="inst-property">comparisons</span>   : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize comparisons</span>
-<span class="inst-property">evaluate</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// evaluate constant expressions</span>
-<span class="inst-property">booleans</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize boolean expressions</span>
-<span class="inst-property">loops</span>         : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize loops</span>
-<span class="inst-property">unused</span>        : <span class="inst-value">true</span>,  <span class="inst-comment">// drop unused variables/functions</span>
-<span class="inst-property">hoist_funs</span>    : <span class="inst-value">true</span>,  <span class="inst-comment">// hoist function declarations</span>
-<span class="inst-property">hoist_vars</span>    : <span class="inst-value">false</span>, <span class="inst-comment">// hoist variable declarations</span>
-<span class="inst-property">if_return</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize if-s followed by return/continue</span>
-<span class="inst-property">join_vars</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// join var declarations</span>
-<span class="inst-property">cascade</span>       : <span class="inst-value">true</span>,  <span class="inst-comment">// try to cascade \`right\` into \`left\` in sequences</span>
-<span class="inst-property">side_effects</span>  : <span class="inst-value">true</span>,  <span class="inst-comment">// drop side-effect-free statements</span>
-<span class="inst-property">warnings</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// warn about potentially dangerous optimizations/code</span>
-<span class="inst-property">global_defs</span>   : <span class="inst-value">{}</span>     <span class="inst-comment">// global definitions</span></br></pre>`;
+		`<pre><span>//default minify settings</span>
+		<span class="inst-property">sequences</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// join consecutive statemets with the “comma operator</span>
+		<span class="inst-property">properties</span>    : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize property access: a["foo"] → a.foo</span>
+		<span class="inst-property">dead_code</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// discard unreachable code</span>
+		<span class="inst-property">drop_debugger</span> : <span class="inst-value">true</span>,  <span class="inst-comment">// discard “debugger” statements</span>
+		<span class="inst-property">unsafe</span>        : <span class="inst-value">false</span>, <span class="inst-comment">// some unsafe optimizations (see below)</span>
+		<span class="inst-property">conditionals</span>  : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize if-s and conditional expressions</span>
+		<span class="inst-property">comparisons</span>   : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize comparisons</span>
+		<span class="inst-property">evaluate</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// evaluate constant expressions</span>
+		<span class="inst-property">booleans</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize boolean expressions</span>
+		<span class="inst-property">loops</span>         : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize loops</span>
+		<span class="inst-property">unused</span>        : <span class="inst-value">true</span>,  <span class="inst-comment">// drop unused variables/functions</span>
+		<span class="inst-property">hoist_funs</span>    : <span class="inst-value">true</span>,  <span class="inst-comment">// hoist function declarations</span>
+		<span class="inst-property">hoist_vars</span>    : <span class="inst-value">false</span>, <span class="inst-comment">// hoist variable declarations</span>
+		<span class="inst-property">if_return</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// optimize if-s followed by return/continue</span>
+		<span class="inst-property">join_vars</span>     : <span class="inst-value">true</span>,  <span class="inst-comment">// join var declarations</span>
+		<span class="inst-property">cascade</span>       : <span class="inst-value">true</span>,  <span class="inst-comment">// try to cascade \`right\` into \`left\` in sequences</span>
+		<span class="inst-property">side_effects</span>  : <span class="inst-value">true</span>,  <span class="inst-comment">// drop side-effect-free statements</span>
+		<span class="inst-property">warnings</span>      : <span class="inst-value">true</span>,  <span class="inst-comment">// warn about potentially dangerous optimizations/code</span>
+		<span class="inst-property">global_defs</span>   : <span class="inst-value">{}</span>     <span class="inst-comment">// global definitions</span></br></pre>`;
 
 	const default_settings = {
 		minify:{
