@@ -12,6 +12,8 @@
 @import 'components/editor_input';
 @import 'components/editor_output';
 @import 'components/tool_section';
+@import 'components/amazon_banner';
+
 @import 'helpers/mixins';
 
 
@@ -31,7 +33,6 @@ a {
 
 .container {
     margin: 0px auto;
-    width: 1170px;
 }
 
 @keyframes blinker {  
