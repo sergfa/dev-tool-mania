@@ -17,12 +17,8 @@ html
 				<!-- Start header section here-->
 				include ../includes/components/amazon_banner4.pug
 				<!-- End header section here-->
-				.row
-					.col-md-12
-					div.tool-editor-title
-					div.alert.alert-info
-						div.row
-							div.col-md-6
+				.row.alert.alert-info
+							.col-md-6
 								span JS$&nbsp;
 								span#err-message Enter javascript into the left pane.
 								span.blink_cursor _
@@ -32,7 +28,7 @@ html
 									button#btn-save.btn.btn-primary(type="button") Save
 									button#btn-copy.btn.btn-primary(type="button") Copy
 									button#btn-clear.btn.btn-primary(type="button") Clear
-							div.col-md-4.stats
+							.col-md-4.stats
 								div 
 									span Source Length: 
 									span#source-length N/A
@@ -42,12 +38,14 @@ html
 								div
 									span Efficiency: 
 									span#efficiency N/A
-							div.col-md-2.controls.pull-right
+							.col-md-2.controls
 								img#btn-settings.btn-icon(src="img/settings-100.png")
 								a(href="http://lisperator.net/uglifyjs/compress" target="_blank")
 									img#btn-help.btn-icon(src="img/help-100.png")
 								include ../includes/components/modal_settings.pug
-					include ../includes/components/editors.pug
+				.row
+					.col-md-12
+						include ../includes/components/editors.pug
 		include ../includes/components/supporting.pug
 		include ../includes/components/footer.pug
 		script(src="js/js/main.min.js" type="text/javascript" charset="utf-8")

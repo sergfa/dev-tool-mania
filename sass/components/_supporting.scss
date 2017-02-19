@@ -1,46 +1,46 @@
 .supporting {
-        background-color: $third-bkg;
-        padding: 50px 0;
+		background-color: $third-bkg;
+		padding: 50px 0;
 
-    .row {
-        margin-left: 0px;
-        }
+	.row {
+		margin-left: 0px;
+		}
 
    .container{
-        &>h2{
-            text-align: left;
-            font-weight: 300;
-            font-size: $big-font-size;
-            margin: 0 0 50px 0;
-            color: $fancy-color-2;}
+		&>h2{
+			text-align: left;
+			font-weight: 300;
+			font-size: $big-font-size;
+			margin: 0 0 20px 0;
+			color: $fancy-color-2;}
    }
 
    ul {
-    margin : 0;
-    list-style: none;
-    padding: 0;
-    li {
-        margin-top: 10px;
-        a {
-            text-decoration: none;
-            font-size: $medium-font-size;
-            font-weight: 100;
-            color:$fancy-color-1;
-            &:hover{
-                color: $fancy-color-2;}
-        }
-        &:hover{
-            border-bottom: 1px solid $underline-color;}
-    }
-    }
+	margin : 0;
+	list-style: none;
+	padding: 0;
+	li {
+		margin-top: 10px;
+		a {
+			text-decoration: none;
+			font-size: $medium-font-size;
+			font-weight: 100;
+			color:$fancy-color-1;
+			&:hover{
+				color: $fancy-color-2;}
+		}
+		&:hover{
+			border-bottom: 1px solid $underline-color;}
+	}
+	}
 
 
-    .support-item {
-        padding-left: 0;
-        h3 {
-        color: $fancy-color-2;
-        font-size: $big-font-size;
-        font-weight: 200;}
-    }
+	.support-item {
+		padding-left: 0;
+		h3 {
+		color: $fancy-color-2;
+		font-size: $big-font-size;
+		font-weight: 200;}
+	}
 
 }
