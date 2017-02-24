@@ -7,12 +7,12 @@
 		}
 
    .container{
-		&>h2{
+		&>h3{
 			text-align: left;
 			font-weight: 300;
 			font-size: $big-font-size;
 			margin: 0 0 20px 0;
-			color: $fancy-color-2;}
+			color: $primary-text-color;}
    }
 
    ul {
@@ -22,23 +22,26 @@
 	li {
 		margin-top: 10px;
 		a {
-			text-decoration: none;
-			font-size: $medium-font-size;
+			text-decoration: underline;
+			font-size: $tiny-font-size;
 			font-weight: 100;
-			color:$fancy-color-1;
-			&:hover{
-				color: $fancy-color-2;}
+			color: $fancy-color-1;
 		}
-		&:hover{
-			border-bottom: 1px solid $underline-color;}
-	}
+		span {
+			text-decoration: none;
+			font-size: $tiny-font-size;
+			font-weight: 100;
+			color: $default-a-text-color;
+			padding-left: 5px;
+		}
+		}
 	}
 
 
 	.support-item {
 		padding-left: 0;
 		h3 {
-		color: $fancy-color-2;
+		color: $primary-text-color;
 		font-size: $big-font-size;
 		font-weight: 200;}
 	}
