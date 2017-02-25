@@ -12,62 +12,62 @@ var header = require('gulp-header');
 var pkg = require('./package.json');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
-var pug         = require('gulp-pug');
+var pug = require('gulp-pug');
+var htmlmin = require('gulp-html-minifier');
 
-gulp.task('clean', function() {
-	return del(["dist", "build"]);
+gulp.task('clean', function () {
+    return del(["dist", "build"]);
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/main.scss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(gulp.dest('./build/css'));
+    return gulp.src('./sass/main.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('minify-css', function() {
-	return gulp.src('build/css/main.css')
-		.pipe(cleanCSS({debug: true}, function(details) {
-			console.log(details.name + ': ' + details.stats.originalSize);
-			console.log(details.name + ': ' + details.stats.minifiedSize);
-		}))
-		.pipe(rename("main.min.css"))
-		.pipe(gulp.dest('dist/css'));
-		
+gulp.task('minify-css', function () {
+    return gulp.src('build/css/main.css')
+        .pipe(cleanCSS({debug: true}, function (details) {
+            console.log(details.name + ': ' + details.stats.originalSize);
+            console.log(details.name + ': ' + details.stats.minifiedSize);
+        }))
+        .pipe(rename("main.min.css"))
+        .pipe(gulp.dest('dist/css'));
+
 });
 
-gulp.task('minify-css-lib', function() {
+gulp.task('minify-css-lib', function () {
     return gulp.src('css/**/*')
-        .pipe(cleanCSS({debug: true}, function(details) {
+        .pipe(cleanCSS({debug: true}, function (details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(rename({suffix: ".min"}))
-		.pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/css'));
 
 });
 
 
-
-gulp.task('templates', function() {
-	return gulp.src(['views/pages/*.pug'])
-		.pipe(pug())
-		.pipe(gulp.dest('dist/'));
+gulp.task('templates', function () {
+    return gulp.src(['views/pages/*.pug'])
+        .pipe(pug())
+        .pipe(gulp.dest('build/html'));
 });
 
 
-gulp.task('copy-resources', function() {
-	return gulp.src(['img/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
+gulp.task('copy-resources', function () {
+    return gulp.src(['img/**/*'], {"base": "."}).pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-js-lib', function() {
-	return gulp.src(['js/lib/*.js'], { "base" : "." }).pipe(gulp.dest('dist'));
+gulp.task('copy-js-lib', function () {
+    return gulp.src(['js/lib/*.js'], {"base": "."}).pipe(gulp.dest('dist'));
 });
 
 
-gulp.task('js-json-page', function() {
-    return gulp.src(['js/utils.js','js/json-tool.js', '!js/lib/*.js'])
+gulp.task('js-json-page', function () {
+    return gulp.src(['js/utils.js', 'js/json-tool.js', '!js/lib/*.js'])
         .pipe(concat("main.js"))
-		.pipe(babel({
+        .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
@@ -75,10 +75,10 @@ gulp.task('js-json-page', function() {
         .pipe(gulp.dest('dist/js/json'));
 });
 
-gulp.task('js-css-page', function() {
-    return gulp.src(['js/utils.js','js/css-tool.js', '!js/lib/*.js'])
+gulp.task('js-css-page', function () {
+    return gulp.src(['js/utils.js', 'js/css-tool.js', '!js/lib/*.js'])
         .pipe(concat("main.js"))
-		.pipe(babel({
+        .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
@@ -86,10 +86,10 @@ gulp.task('js-css-page', function() {
         .pipe(gulp.dest('dist/js/css'));
 });
 
-gulp.task('js-js-page', function() {
-    return gulp.src(['js/utils.js','js/js-tool.js', '!js/lib/*.js'])
+gulp.task('js-js-page', function () {
+    return gulp.src(['js/utils.js', 'js/js-tool.js', '!js/lib/*.js'])
         .pipe(concat("main.js"))
-		.pipe(babel({
+        .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
@@ -98,10 +98,10 @@ gulp.task('js-js-page', function() {
 });
 
 
-gulp.task('js-html-page', function() {
-    return gulp.src(['js/utils.js','js/html-tool.js', '!js/lib/*.js'])
+gulp.task('js-html-page', function () {
+    return gulp.src(['js/utils.js', 'js/html-tool.js', '!js/lib/*.js'])
         .pipe(concat("main.js"))
-		.pipe(babel({
+        .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
@@ -110,10 +110,10 @@ gulp.task('js-html-page', function() {
 });
 
 
-gulp.task('contact-html-page', function() {
+gulp.task('contact-html-page', function () {
     return gulp.src(['js/contact.js', '!js/lib/*.js'])
         .pipe(concat("main.js"))
-		.pipe(babel({
+        .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(rename({suffix: ".min"}))
@@ -121,16 +121,24 @@ gulp.task('contact-html-page', function() {
         .pipe(gulp.dest('dist/js/contact'));
 });
 
-gulp.task('lint', function() {
-	return gulp.src(['js/**/*.js'])
-		.pipe(jshint())
-		.pipe(jshint.reporter('jshint-stylish'))
-		.pipe(jshint.reporter("fail"));
+gulp.task('lint', function () {
+    return gulp.src(['js/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter("fail"));
+});
+
+gulp.task('minify-html', function () {
+    gulp.src('build/html/*.html')
+        .pipe(htmlmin({collapseWhitespace: true, removeComments: true, removeAttributeQuotes: true, removeRedundantAttributes: true}))
+        .pipe(gulp.dest('dist/'))
 });
 
 
 gulp.task('build', function (done) {
-	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page','js-html-page' , 'js-js-page','contact-html-page', 'minify-css-lib', 'templates', done);
+    return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources', 'copy-js-lib',
+                        'js-json-page', 'js-css-page', 'js-html-page', 'js-js-page',
+                        'contact-html-page', 'minify-css-lib', 'templates','minify-html', done);
 });
 
 
