@@ -35,6 +35,18 @@ gulp.task('minify-css', function() {
 		
 });
 
+gulp.task('minify-css-lib', function() {
+    return gulp.src('css/**/*')
+        .pipe(cleanCSS({debug: true}, function(details) {
+            console.log(details.name + ': ' + details.stats.originalSize);
+            console.log(details.name + ': ' + details.stats.minifiedSize);
+        }))
+        .pipe(rename({suffix: ".min"}))
+		.pipe(gulp.dest('dist/css'));
+
+});
+
+
 
 gulp.task('templates', function() {
 	return gulp.src(['views/pages/*.pug'])
@@ -45,10 +57,6 @@ gulp.task('templates', function() {
 
 gulp.task('copy-resources', function() {
 	return gulp.src(['img/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
-});
-
-gulp.task('copy-css', function() {
-	return gulp.src(['css/**/*'], { "base" : "." }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('copy-js-lib', function() {
@@ -122,7 +130,7 @@ gulp.task('lint', function() {
 
 
 gulp.task('build', function (done) {
-	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page','js-html-page' , 'js-js-page','contact-html-page', 'copy-css', 'templates', done);
+	return runSequence('clean', 'lint', 'sass', 'minify-css', 'copy-resources','copy-js-lib','js-json-page','js-css-page','js-html-page' , 'js-js-page','contact-html-page', 'minify-css-lib', 'templates', done);
 });
 
 
