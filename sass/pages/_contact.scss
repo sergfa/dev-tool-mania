@@ -28,15 +28,5 @@
 	.req-field{
 		color: $attention-text-color;}
 
-		button {
-		background-color: $important-button-bkg;
-		color: $important-text-color;
-		font-size: $medium-font-size;
-		&:hover, &:focus, &:active, &:focus{
-			background-color: $important-button-bkg !important;
-			color: $important-text-color !important;
-			
-		}
-		}
 	
 }

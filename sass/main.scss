@@ -18,21 +18,21 @@
 
 
 body {
-    font-family: $primary-font , serif;
-    font-size: $medium-font-size;
-    font-weight: 100;
-    color: $primary-text-color;
+	font-family: $primary-font , serif;
+	font-size: $medium-font-size;
+	font-weight: 100;
+	color: $primary-text-color;
 }
 
 a {
-    color: $default-a-text-color;
-    &:hover {
-        color: $default-a-text-color;
-        text-decoration: none;}
+	color: $default-a-text-color;
+	&:hover {
+		color: $default-a-text-color;
+		text-decoration: none;}
 }
 
 .container {
-    margin: 0px auto;
+	margin: 0px auto;
 }
 
 @keyframes blinker {  
@@ -40,8 +40,9 @@ a {
 }
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
+
 
 
 
