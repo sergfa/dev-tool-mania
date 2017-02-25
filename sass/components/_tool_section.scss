@@ -1,7 +1,12 @@
 .tool-section{
 	background-color: $secondary-bkg;
 	padding: 20px 0;
-	
+
+	.tool-section-title {
+		h3 {
+			font-size: 14px;
+		}
+	}
 	.tool-editor-title{
 		text-align: center;
 		h3, h4{
