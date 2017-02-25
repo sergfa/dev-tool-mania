@@ -13,7 +13,7 @@
 		margin-top: 0px;
 	}	
 	.alert{
-		background-color: $primary-bkg;
+		background-color: $ace-twilight;
     	color: rgba(0,255,119,1);
 		margin: 20px 0 0 0;
 		font-family: monospace;
@@ -50,7 +50,7 @@
 			font-size: 14px;
 			font-family: $primary-font;
 			font-weight: 100;
-			color:  $default-a-text-color;
+			color:  $ace-text-color;
 		}
 		.controls{
 			.btn-icon{
