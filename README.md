@@ -2,8 +2,8 @@
 #DevToolMania
 <a href="http://devtoolmania.com">Live Demo</a>
 
-Online Web Development Editors
-Free HTML, CSS, JSON, JavaScript editors allow you to edit, validate, format your code online!
+Online Web Development Editor is a static page website (no server side needed)</br>
+that contains HTML, CSS, JSON, JavaScript editors to edit, validate, format, minify/uglify/beautify source code
 
 ### Prerequisites
 NodeJS, gulp
