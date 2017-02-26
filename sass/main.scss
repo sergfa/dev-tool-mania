@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
-@import 'helpers/theme/light/variables';
+@import 'helpers/theme/dark/variables';
 @import 'helpers/placeholders';
 @import 'helpers/mixins';
 @import 'components/header';
@@ -33,6 +33,9 @@ a {
 
 .container {
 	margin: 0px auto;
+	width: 100%;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 @keyframes blinker {  
