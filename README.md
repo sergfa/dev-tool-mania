@@ -1,9 +1,10 @@
 
 #DevToolMania
+
+DevToolMania is a website that uses <a href="https://ace.c9.io/#nav=about">Ace editor</a>
+to view/edit JSON, CSS, HTML, JS  code.
 <a href="http://devtoolmania.com">Live Demo</a>
 
-Online Web Development Editor is a static page website (no server side needed)</br>
-that contains HTML, CSS, JSON, JavaScript editors to edit, validate, format, minify/uglify/beautify source code
 
 ### Prerequisites
 NodeJS, gulp
