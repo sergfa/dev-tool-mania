@@ -28,7 +28,7 @@ gulp build
 </pre>
 Open the landing page in your browser
 <pre>
-open dist/index.html
+npm start
 </pre>
 
 

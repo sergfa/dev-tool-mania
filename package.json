@@ -4,7 +4,8 @@
   "description": "Useful tools for web developers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-safari-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
+    "lite-server": "^2.2.2",
     "pug": "^2.0.0-beta11",
     "run-sequence": "^1.2.2"
   }
