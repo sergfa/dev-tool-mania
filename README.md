@@ -26,7 +26,7 @@ Build the project with gulp into dist directory:
 <pre>
 gulp build
 </pre>
-Open the landing page in the browser
+Open the landing page in your browser
 <pre>
 open dist/index.html
 </pre>
