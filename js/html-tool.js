@@ -219,9 +219,10 @@
 		}
 
 	});
-	
 
 
+
+    DevUtils.initLoadFile("#btn-load", "#load-input", editorInput);
 
 
 

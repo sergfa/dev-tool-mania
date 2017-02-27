@@ -259,8 +259,10 @@
 		}
 
 	});
-	
 
-	//End add click listeners to action buttons
+
+    DevUtils.initLoadFile("#btn-load", "#load-input", editorInput);
+
+    //End add click listeners to action buttons
 
 })();
